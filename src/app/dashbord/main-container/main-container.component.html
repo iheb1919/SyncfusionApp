@@ -1,0 +1,18 @@
+<div class="d-flex flex-column" style="position: relative">
+    <app-navbar
+        (isCheckedChange)="isCheckedChange($event)"
+        style="position: sticky; top: 0; z-index: 999999"
+        [sideClosed]="sideClosed"
+        [trye]="trye">
+    </app-navbar>
+    <div class="main-sidebar-content d-flex">
+         <app-side-bar
+         style="position: fixed; top: 0; left: 0;"
+            [sideClosed]="sideClosed"
+            (calltry)="try($event)">
+        </app-side-bar> 
+        <div class="container-fluid" id="zz" style=" transition: margin-left .5s linear; margin-left: 290px; padding: 20px;  margin-right: 15px; " >
+            <app-home ></app-home>
+        </div>
+    </div>
+</div>

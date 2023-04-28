@@ -1,0 +1,112 @@
+
+<div class="control-container">
+  
+  <ejs-appbar colorMode="Light" mode="Prominent" cssClass="custom-appbar" tooltipText="Menu" style="overflow: visible; padding: 10px;">
+   <div class="d-flex  me-5" id="logo" style="width:200px ">
+      <div class="flex-grow-1 logo">LOGO HERE</div>
+    <i  class=" navList bi bi-list " style=" color :#000; font-size: 2rem;" (click)="togl()"></i>
+    
+  </div>
+  
+    
+
+    <div class="search-wrapper " id="Nav-search">
+      <div class="input-holder">
+      <input type="text" class="search-input" placeholder="Type to search">
+      <button type='button' (click)="searchfor()" class=" btn search-icon ">
+        <span class="bi bi-search"></span>
+      </button>
+      </div>
+      <button class="  btn close bi bi-x-lg" (click)="search()">
+        
+      </button>
+      </div>
+      <ejs-menu [items]='menuItems' ></ejs-menu>
+    <div class="e-appbar-spacer"></div>
+    <div class="d-flex justify-content-between px-2">
+      <div class="dropdown ">
+        <span  class="cc " id="dropdownNotification" data-bs-toggle="dropdown" aria-expanded="false"
+      style=" font-size: 15px; background-color:rgba(255, 0, 0, 0.06); color: rgba(255, 0, 0); " >
+      <i class="bi bi-bell-fill cc  notfRing ms-2"></i>
+        <span class="e-badge e-badge-info e-badge-notification e-badge-overlap">14</span>
+        </span>
+        <div class="dropdown-menu  text-small shadow p-0" aria-labelledby="dropdownNotification">
+          <div class="dropdownHeader ">
+            <div class="ee">
+            <p>Grid Dashboard</p>
+            <p>Easy grid navigation inside dropdowns</p>
+          </div>
+        </div>
+       
+        <div class="dropdownContent" >
+          <div class="flexCard"></div>
+          <div class="flexCard"></div>
+          <div class="flexCard"></div>
+          <div class="flexCard"></div>
+          <div class="flexCard"></div>
+          <div class="flexCard"></div>
+        </div >
+        <div class="footerdropDown d-flex justify-content-center flex-column py-2">
+          <button class=" btn btn-primary mx-auto ">Follow-Ups</button>
+        </div>
+        </div>
+      </div>
+
+
+      <div class="dropdown p-0" style="padding: 0 !important;">
+        <span    class=" cc "  style=" font-size: 15px; background-color:rgba(232, 122, 201, 0.06) ;color: rgba(232, 122, 201);"
+      id="dropdownLanguage" data-bs-toggle="dropdown" aria-expanded="false" >
+        <!-- <i class="bi bi-translate " style="font-size: 15px;"></i> -->
+        <img  src="../../../assets/Flag_of_the_United_States.svg.webp"  style=" border-radius: 40%; width: 25px; height: 25px; "/>
+
+        </span>
+        <div  class="dropdown-menu  text-small shadow p-0" aria-labelledby="dropdownLanguage">
+          <div class="dropdownHeader ">
+            <div class="ee">
+            <h5> Choose language</h5>
+          </div>
+        </div>
+       
+        <div class="dropdownContent d-flex flex-column " >
+          <div class="flexCard p-2 w-100 d-flex flex-gap-2 align-items-center ">
+            <img  src="../../../assets/Flag_of_the_United_States.svg.webp"  style=" width: 50px; height: 30px; margin-right: 20px;"/>
+              ENGLISH
+          </div>
+          <div class="flexCard p-2 w-100 d-flex flex-gap-2 align-items-center">
+            <img  src="../../../assets/city3.jpg"  style=" width: 50px; height: 30px;  margin-right: 20px;"/>
+              Frensh
+          </div>
+          <div class="flexCard p-2 w-100 d-flex flex-gap-2 align-items-center">
+            <img  src="../../../assets/city3.jpg"  style=" width: 50px; height: 30px;  margin-right: 20px;"/>
+              Deuvh
+          </div>
+          <div class="flexCard p-2 w-100 d-flex flex-gap-2 align-items-center">
+            <img  src="../../../assets/city3.jpg"  style=" width: 50px; height: 30px;  margin-right: 20px;"/>
+              Arabic
+          </div>
+          
+        </div >
+        <div class="footerdropDown d-flex justify-content-center flex-column py-2">
+          <button class=" btn btn-primary mx-auto ">Follow-Ups</button>
+        </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+    
+    
+    <div class="imageSeting">
+      <img class="e-avatar e-avatar-small e-avatar-circle image" src="https://github.com/mdo.png">
+      
+      <span class="bi bi-chevron-down ms-2" _ngcontent-rxn-c18=""></span>
+      <div class="d-flex flex-column mx-3">
+        <span style="font-weight: 500;"> Alna MClourd</span>
+        <span style="color: #4a4a4ac1;"> Vp </span>
+      </div>
+    </div>
+  </ejs-appbar>
+  
+</div>

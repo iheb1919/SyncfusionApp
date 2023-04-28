@@ -1,0 +1,30 @@
+
+      <ejs-sidebar id="sidebar-treeview" class="sidebar-treeview" #sidebarTreeviewInstance 
+          [enableDock]='true' [width]='width' [dockSize]='dockSize' 
+          [mediaQuery]='mediaQuery' [target]='target' 
+          
+          (mouseenter)="onMouseEnter()"
+          (mouseleave)="onMouseLeave()"
+          >
+      <div class='main-menu' style="height: calc(100% - 70px);" >
+        
+          <!-- <div class="table-content">
+              <p class="main-menu-header">TABLE OF CONTENTS {{sideClosed}} </p>
+          </div> -->
+          
+              <ejs-treeview id='mainTree' cssClass="main-treeview"
+               [fields]="fields" 
+               expandOn='Click'>
+               <ng-template #nodeTemplate let-data >
+                
+                   <span [ngClass]="{'headerTitle': data.type}"  class="e-list-text ">{{data.nodeText}}</span>
+                </ng-template>
+          
+              </ejs-treeview> 
+             
+            
+          
+      </div>
+  </ejs-sidebar>
+  <!-- end of sidebar element -->
+  <!-- .main-sidebar-content declaration -->
