@@ -1,11 +1,222 @@
 
- <div class="sidebr" style="max-width: 100%;">
-    <app-chart-linear></app-chart-linear>
-    <app-chart-linear></app-chart-linear>
-    <app-chart-linear></app-chart-linear>
-    <app-chart-linear></app-chart-linear>
-    
-    
-  </div> 
+<div class="container-fluid " style="background-color: inherit;">
+    <div class="row ">
+        <div class=" col-lg-4 col-md-6 col-sm-12 col-xs-12 py-1">
+            <div class=" e-card shadowbox " style=" height: 250px">
+                <div class="e-card-content " style=" position: relative;">
+                    <div class="" style="display: block; margin-top: 100px;">
+                        <app-chart-linear type="Column" height="140px"
+                            style="display: block; width: 90%;"></app-chart-linear>
+                    </div>
 
+                    <div class="a">
+                        <div class="bi bi-cash-coin p-3" style=" font-size:
+                            1.7rem;
+                            background: rgba(255, 0, 0, 0.2); color: rgba(255,
+                            0, 0); border-radius:
+                            15px;">
+                        </div>
+                        <span style="font-size: 1.2rem;
+                            font-weight: 700; ">
+                            Cash Deposits
+                        </span>
+                        <span style="font-size: 1.2rem; font-weight: 400; ">
+                            <i class="bi bi-caret-down-fill" style="color:red;"></i>
+                            54.1% down last 30 days
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=" col-lg-4 col-md-6 col-sm-12 col-xs-12 py-1">
+            <div class=" e-card shadowbox " style=" height: 250px">
+                <div class="e-card-content " style=" z-index: 6; position:
+                    relative;">
+                    <div class="" style="display: block; width: 100%;
+                        margin-top: 100px;">
+                        <app-chart-linear height="140px" style="display: block;
+                            width: 90%;"></app-chart-linear>
+                    </div>
+                    <div class="a">
+                        <div class="bi bi-people-fill p-3" style=" font-size:
+                            1.7rem;
+                            background: rgba(255, 225, 0, 0.306);
+                            color:rgba(255, 225, 0) ; border-radius:
+                            15px;">
+                        </div>
+                        <span style="font-size: 1.2rem;
+                            font-weight: 700; ">
+                            Users Interactions
+                        </span>
+                        <span style="font-size: 1.2rem; font-weight:400; ">
+                            <i class="bi bi-caret-up-fill" style="color:rgb(1,
+                                160, 36); font-size: 1.1rem;"></i>
+                            12.1% up last 30 days
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=" col-lg-4 col-md-12 col-sm-12 col-xs-12 py-1">
+            <div class=" e-card shadowbox " style=" height: 250px">
+                <div class="e-card-content " style=" z-index: 6; position:
+                    relative;">
+                    <div class="" style="display: block; width: 100%;
+                        margin-top: 100px;">
+                        <app-chart-linear type="Area" height="140px"
+                            style="display: block; width: 90%;"></app-chart-linear>
+                    </div>
+                    <div class="a">
+                        <div class="bi bi-cash-coin p-3" style=" font-size:
+                            1.7rem;
+                            background: rgba(255, 0, 0, 0.2); color: rgba(255,
+                            0, 0); border-radius:
+                            15px;">
+                        </div>
+                        <span style="font-size: 1.2rem;
+                            font-weight: 700; ">
+                            Cash Deposits
+                        </span>
+                        <span style="font-size: 1.2rem; font-weight: 400; ">
+                            <i class="bi bi-caret-down-fill" style="color:red;"></i>
+                            54.1% down last 30 days
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" row ">
 
+        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 py-1">
+            <div class=" shadowbox bg-white p-2">
+                <app-hart-uulmn type="Line" style="width:100%; display:block;"></app-hart-uulmn>
+            </div>
+        </div>
+        <div class=" col-lg-6 col-md-12 col-sm-12 col-xs-12 py-1">
+            <div class=" shadowbox bg-white p-2">
+                <app-hart-uulmn style="width:100%; display:block;"></app-hart-uulmn>
+            </div>
+        </div>
+        
+
+    </div>
+    <div class="row ">
+        <div class=" col-lg-4 col-md-4 col-sm-12 col-xs-12 p-3">
+            <div class=" shadowbox bg-white p-3" style="height:100%;">
+                <div class=" text-header p-2">
+                    <h4 >Tasks</h4> 
+                </div>
+                <ejs-listview  style="display:block;" width="100%"  height="220px" [showCheckBox]='true' id='listview_template' #listviewInstance [dataSource]='data2' >
+                    <ng-template #template let-dataSource="">
+                        <div  class="list-wrapper d-flex align-items-center my-2">
+                            <div class="d-flex justify-content-between align-items-center inner-list-wrapper px-3">
+                                <div class="d-flex flex-column">
+                                    <span class="e-list-item-header" style="color: #000000;" >{{dataSource.title}} </span>
+                                    <span class="e-list-content e-text-overflow"  style="color: #3d3d3dac;" [innerHTML]="dataSource.desc"></span>
+                                </div>
+                                <div id="list-logo"  >
+                                    <span class="bi bi-pencil-fill p-2 logo_edit" ></span>
+                                    <span class="bi bi-trash-fill p-2 logo_delete" ></span>
+                                </div>
+                            </div>
+                        </div>
+                        </ng-template>
+                    </ejs-listview>
+                    <div class=" text-center">
+                    <button class=" btn btn-primary m-2 mx-auto"(click)="showall()" >
+                        Show all
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class=" col-lg-8 col-md-8 col-sm-12 col-xs-12 p-3">
+            <div class=" shadowbox bg-white p-3">
+                <app-table-grid style="width:100%; display:block;"></app-table-grid>
+            </div>
+        </div>
+        
+    </div>
+    <div class=" row  bg-white  shadowbox mx-1">
+        <h4>Listed Orders</h4>
+
+        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 py-1">
+            <div class="p-1">
+                <div class="d-flex justify-content-between">
+                    <div class="dlex flex-column">
+                        <h6 style="color: #000000;margin-bottom: 0px
+                            !important;">Total order</h6>
+                        <p style="color: #495057; margin-bottom: 0px
+                            !important;">Last year Expenses</p>
+                    </div>
+                    <h4 style="color: #d92550;">3546</h4>
+                </div>
+                <ejs-progressbar [labelStyle]='{color:"#fff"}'
+                    progressColor='#d92550' id='percentage1'
+                    cornerRadius='Round' type='Linear' height='30' width='100%'
+                    trackThickness=15 progressThickness=15
+                    secondaryProgressThickness=20 value=43
+                    [showProgressValue]='true' [animation]='animation'>
+                </ejs-progressbar>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 py-1">
+            <div class="d-flex justify-content-between">
+                <div class="dlex flex-column">
+                    <h6 style="color: #000000;margin-bottom: 0px !important;">Followers</h6>
+                    <p style="color: #495057; margin-bottom: 0px !important;">Intrested
+                        Followers</p>
+                </div>
+
+                <h4 style="color:#3f6ad8">3546</h4>
+            </div>
+            <ejs-progressbar [labelStyle]="{color:'#fff', textAlignment:
+                'Center'}" progressColor="#3f6ad8"
+                id='percentage2'cornerRadius='Round' type='Linear' height='30'
+                width='100%' trackThickness=15 progressThickness=15
+                secondaryProgressThickness=20 value=30
+                [showProgressValue]='true'
+
+                [animation]='animation'>
+            </ejs-progressbar>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 py-1">
+            <div class="d-flex justify-content-between">
+                <div class="dlex flex-column">
+                    <h6 style="color: #000000;margin-bottom: 0px !important;">Clients</h6>
+                    <p style="color: #495057; margin-bottom: 0px !important;">Profits</p>
+                </div>
+                <h4 style="color: #3ac47d;">5235</h4>
+            </div>
+            <ejs-progressbar progressColor="#3ac47d" id='percentage3'
+                cornerRadius='Round' type='Linear' height='30' width='100%'
+                trackThickness=15 progressThickness=15
+                secondaryProgressThickness=20 value=56
+                [showProgressValue]='true'
+
+                [animation]='animation'>
+            </ejs-progressbar>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12 py-1">
+            <div class="d-flex justify-content-between">
+                <div class="dlex flex-column">
+                    <h6 style="color: #000000;margin-bottom: 0px !important;">Products
+                        Sold</h6>
+                    <p style="color: #495057; margin-bottom: 0px !important;">Total
+                    </p>
+                </div>
+                <h4 style="color:#444054">3546</h4>
+            </div>
+            <ejs-progressbar progressColor="#444054" id='percentage4'
+                cornerRadius='Round' type='Linear' height='30' width='100%'
+                trackThickness=15 progressThickness=15
+                secondaryProgressThickness=20 value=47
+                [showProgressValue]='true'
+
+                [animation]='animation'>
+            </ejs-progressbar>
+
+        </div>
+
+    </div>
+</div>

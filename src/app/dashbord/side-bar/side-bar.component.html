@@ -1,12 +1,13 @@
 
-      <ejs-sidebar id="sidebar-treeview" class="sidebar-treeview" #sidebarTreeviewInstance 
+      
+      <ejs-sidebar id="sidebar-treeview" class="sidebar-treeview " #sidebarTreeviewInstance 
           [enableDock]='true' [width]='width' [dockSize]='dockSize' 
           [mediaQuery]='mediaQuery' [target]='target' 
-          
+          style="height: 97vh;"
           (mouseenter)="onMouseEnter()"
           (mouseleave)="onMouseLeave()"
           >
-      <div class='main-menu' style="height: calc(100% - 70px);" >
+      <div class='main-menu'  >
         
           <!-- <div class="table-content">
               <p class="main-menu-header">TABLE OF CONTENTS {{sideClosed}} </p>
@@ -15,16 +16,29 @@
               <ejs-treeview id='mainTree' cssClass="main-treeview"
                [fields]="fields" 
                expandOn='Click'>
-               <ng-template #nodeTemplate let-data >
-                
-                   <span [ngClass]="{'headerTitle': data.type}"  class="e-list-text ">{{data.nodeText}}</span>
+                <ng-template #nodeTemplate let-data >
+                  
+                    <a *ngIf="data.url && data.url.length > 0; else Else" [routerLink]="data.url && data.url.length > 0 ? [data.url] : ['home']"   class="e-list-text ">{{data.nodeText}}</a>
+
+                  
+                  <ng-template  #Else>
+                    <p  [ngClass]="{'headerTitle': data.type}"  class="e-list-text ">{{data.nodeText}}</p>
+                  </ng-template>
                 </ng-template>
-          
+  
               </ejs-treeview> 
              
             
           
+              <hr>
+              <div class="imageSeting d-flex align-items-center justify-content-evenly" >
+                <div>
+                <img class="e-avatar e-avatar-small e-avatar-circle image" src="https://github.com/mdo.png">
+                <span class="bi bi-chevron-down ms-2" _ngcontent-rxn-c18=""></span>
+              </div>
+                <div class="d-flex flex-column mx-3">
+                  <span style="font-weight: 500; font-size: 1.2rem; color: #4a4a4ac1;"> Alna MClourd</span>
+                </div>
+              </div>
       </div>
-  </ejs-sidebar>
-  <!-- end of sidebar element -->
-  <!-- .main-sidebar-content declaration -->
+      </ejs-sidebar>

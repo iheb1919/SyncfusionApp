@@ -1,0 +1,196 @@
+
+.imageContainer{
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 50% !important;
+}
+
+@media (max-width: 991.98px) {
+    .loginContainer{
+        justify-content: center;
+    }
+   
+    .formcontainer{
+        width: 60vw !important;
+        height: 100vh !important;
+        padding: 20px !important;
+        border: 5px solid red !important; 
+    }
+    .formcontainer form{
+      width: 100% !important;
+      height: 100%  !important;
+    }
+    
+}
+@media (max-width: 560px) {
+  .a{
+    top: 30px !important ;
+    left: 40px !important ;
+    height: 60px !important ;
+  }
+  .imageContainer{
+      display: none;
+  }
+ 
+  .formcontainer{
+      width: 100vw !important;
+      height: 100vh !important;
+      padding: 20px !important;
+  }
+  .formcontainer form{
+    width: 100% !important;
+    height: 100%  !important;
+  }
+  
+}
+.im{
+    
+    width: 100%;
+    height: 100%;
+}
+
+.rr{
+    height: 100%;
+    background-image: linear-gradient(135deg,#667eea 0%,#764ba2 100%)!important;
+}
+.a{
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    height: 100px;
+    z-index: 999;
+}
+h2 {
+    animation-name: slideIn;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+  h3 {
+    animation-name: slideOut;
+    animation-duration: 2s;
+
+    animation-fill-mode: both;
+    animation-delay: 1s;
+    opacity: 0;
+  }
+  .eyepos { 
+    position: absolute;
+    right: 10px;
+    top: 0;
+    font-size: 1.2rem;
+} 
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideOut {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  .bg-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    opacity: .4;
+    z-index: 10;
+    /* The image used */
+    background-image: url("../../../assets/audit.jpg");
+    
+    
+    /* filter: blur(8px);
+    -webkit-filter: blur(8px);
+    
+    height: 100%; 
+    
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; */
+  }
+  .bg-text {
+   z-index: 15 ;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+  }
+  .formcontainer{
+    
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f0f2f5;
+  }
+  .form-title{
+    margin: 50px 0 60px 0;
+  }
+  .formcontainer form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 90%;
+    border: 1px solid rgb(197, 197, 197);
+    padding: 50px;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+  }
+  .formcontainer form .form-group{
+    width: 100%;
+    margin: 20px 0;
+  }
+  .formcontainer form .form-group .e-float-input input,
+  .formcontainer form .form-group .e-float-input label,
+  .formcontainer form .form-group .submitBtn button
+   {
+   font-size: 1.2rem;
+  }
+  .formcontainer form .form-group .submitBtn button{
+    border-radius: 20px;
+    padding: 10px 40px !important;
+  }
+  input:not(.e-success):not(.e-warning):not(.e-error):not(.e-input-group) input:focus ~ label,
+
+  .e-float-input:not(.e-success) .e-float-line::after ,
+  .e-float-input:not(.e-success) .e-float-line::before
+ {
+    background-color: #4114e0 ;
+  }
+  .e-float-input:not(.e-success) input:focus ~ .e-float-text
+{
+    color: #4114e0 !important;
+}
+
+  
+

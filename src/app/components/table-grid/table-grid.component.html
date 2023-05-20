@@ -1,0 +1,15 @@
+<div class="text-header p-2">
+    <h4 >Clients </h4>
+</div>
+<ejs-grid  [dataSource]="data"(rowSelected)='rowSelected($event)' [allowPaging]="true" [pageSettings]="pageSettings" [allowSorting]="true">
+    <e-columns >
+        <e-column field="OrderID" headerText="OrderId" width="100px"></e-column>
+        <e-column field="CustomerID" headerText="OrderId" ></e-column>
+        <e-column field="CustomerName" headerText="CustomerName"></e-column>
+        <e-column field="OrderDate" headerText="OrderDate"></e-column>
+        <e-column field="ShippedDate" headerText="ShippedDate"></e-column>
+    </e-columns>
+</ejs-grid>
+
+
+

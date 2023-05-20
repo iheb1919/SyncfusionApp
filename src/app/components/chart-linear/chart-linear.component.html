@@ -5,12 +5,12 @@
         </e-series>
     </e-series-collection>
 </ejs-chart> -->
-<ejs-chart  [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis'
-    [legendSettings]='legendSettings' [tooltip]='tooltip' [title]='title'>
-        <e-series-collection>
-            <e-series [dataSource]='chartData' type='Line' xName='month' yName='sales' name='Sales' [marker]='marker'></e-series>
-            <e-series [dataSource]='chartData2' type='Line' xName='month' yName='sales' name='Sales2' [marker]='marker'></e-series>
-
+<ejs-chart style="display:block"  isResponsive="true" [chartArea]="chartArea" [primaryXAxis]='primaryXAxis' [primaryYAxis]='primaryYAxis' [palettes]="palette"
+     [tooltip]='tooltip' height='{{height}}' width="100%" >
+        <e-series-collection>   
+            <e-series  [dataSource]='chartData' type='{{type}}' xName='month' yName='sales' width="3px"></e-series>
+<!--             <e-series [dataSource]='chartData2' type='Line' xName='month' yName='sales' name='Sales2' ></e-series>
+ -->
         </e-series-collection>
       
     </ejs-chart>

@@ -1,112 +1,224 @@
 
-<div class="control-container">
-  
-  <ejs-appbar colorMode="Light" mode="Prominent" cssClass="custom-appbar" tooltipText="Menu" style="overflow: visible; padding: 10px;">
-   <div class="d-flex  me-5" id="logo" style="width:200px ">
-      <div class="flex-grow-1 logo">LOGO HERE</div>
-    <i  class=" navList bi bi-list " style=" color :#000; font-size: 2rem;" (click)="togl()"></i>
-    
+
+<ejs-appbar isSticky=true colorMode="Light" cssClass="navbar navbar-expand-md custom-appbar" tooltipText="Menu">
+  <div>
+  <!-- Brand + Menu -->
+  <div class=" d-flex fs-3 me-3 p-5" id="logo" style="width:290px; ">
+    <div class="d-none d-lg-block navbar-brand flex-grow-1 logo d-flex h-100 justify-content-center
+      align-items-center"> <a [routerLink]="['/']" >Dashbord </a> 
+    </div>
+    <!-- <i class=" bi bi-list ms-auto " style=" color :#000; font-size: 2rem;"
+      (click)="togl()"></i> -->
+      <div (click)="togl()" class="  " >
+        <div class="bar"   ></div>
+        <div class="bar"   ></div>
+        <div class="bar"   ></div>
+    </div>
   </div>
-  
-    
-
-    <div class="search-wrapper " id="Nav-search">
-      <div class="input-holder">
-      <input type="text" class="search-input" placeholder="Type to search">
-      <button type='button' (click)="searchfor()" class=" btn search-icon ">
-        <span class="bi bi-search"></span>
-      </button>
-      </div>
-      <button class="  btn close bi bi-x-lg" (click)="search()">
-        
-      </button>
-      </div>
-      <ejs-menu [items]='menuItems' ></ejs-menu>
-    <div class="e-appbar-spacer"></div>
-    <div class="d-flex justify-content-between px-2">
-      <div class="dropdown ">
-        <span  class="cc " id="dropdownNotification" data-bs-toggle="dropdown" aria-expanded="false"
-      style=" font-size: 15px; background-color:rgba(255, 0, 0, 0.06); color: rgba(255, 0, 0); " >
-      <i class="bi bi-bell-fill cc  notfRing ms-2"></i>
-        <span class="e-badge e-badge-info e-badge-notification e-badge-overlap">14</span>
-        </span>
-        <div class="dropdown-menu  text-small shadow p-0" aria-labelledby="dropdownNotification">
-          <div class="dropdownHeader ">
-            <div class="ee">
-            <p>Grid Dashboard</p>
-            <p>Easy grid navigation inside dropdowns</p>
-          </div>
-        </div>
-       
-        <div class="dropdownContent" >
-          <div class="flexCard"></div>
-          <div class="flexCard"></div>
-          <div class="flexCard"></div>
-          <div class="flexCard"></div>
-          <div class="flexCard"></div>
-          <div class="flexCard"></div>
-        </div >
-        <div class="footerdropDown d-flex justify-content-center flex-column py-2">
-          <button class=" btn btn-primary mx-auto ">Follow-Ups</button>
-        </div>
-        </div>
-      </div>
-
-
-      <div class="dropdown p-0" style="padding: 0 !important;">
-        <span    class=" cc "  style=" font-size: 15px; background-color:rgba(232, 122, 201, 0.06) ;color: rgba(232, 122, 201);"
-      id="dropdownLanguage" data-bs-toggle="dropdown" aria-expanded="false" >
-        <!-- <i class="bi bi-translate " style="font-size: 15px;"></i> -->
-        <img  src="../../../assets/Flag_of_the_United_States.svg.webp"  style=" border-radius: 40%; width: 25px; height: 25px; "/>
-
-        </span>
-        <div  class="dropdown-menu  text-small shadow p-0" aria-labelledby="dropdownLanguage">
-          <div class="dropdownHeader ">
-            <div class="ee">
-            <h5> Choose language</h5>
-          </div>
-        </div>
-       
-        <div class="dropdownContent d-flex flex-column " >
-          <div class="flexCard p-2 w-100 d-flex flex-gap-2 align-items-center ">
-            <img  src="../../../assets/Flag_of_the_United_States.svg.webp"  style=" width: 50px; height: 30px; margin-right: 20px;"/>
-              ENGLISH
-          </div>
-          <div class="flexCard p-2 w-100 d-flex flex-gap-2 align-items-center">
-            <img  src="../../../assets/city3.jpg"  style=" width: 50px; height: 30px;  margin-right: 20px;"/>
-              Frensh
-          </div>
-          <div class="flexCard p-2 w-100 d-flex flex-gap-2 align-items-center">
-            <img  src="../../../assets/city3.jpg"  style=" width: 50px; height: 30px;  margin-right: 20px;"/>
-              Deuvh
-          </div>
-          <div class="flexCard p-2 w-100 d-flex flex-gap-2 align-items-center">
-            <img  src="../../../assets/city3.jpg"  style=" width: 50px; height: 30px;  margin-right: 20px;"/>
-              Arabic
-          </div>
-          
-        </div >
-        <div class="footerdropDown d-flex justify-content-center flex-column py-2">
-          <button class=" btn btn-primary mx-auto ">Follow-Ups</button>
-        </div>
-        </div>
-      </div>
-
-
-
-    </div>
-
-    
-    
-    <div class="imageSeting">
-      <img class="e-avatar e-avatar-small e-avatar-circle image" src="https://github.com/mdo.png">
-      
-      <span class="bi bi-chevron-down ms-2" _ngcontent-rxn-c18=""></span>
-      <div class="d-flex flex-column mx-3">
-        <span style="font-weight: 500;"> Alna MClourd</span>
-        <span style="color: #4a4a4ac1;"> Vp </span>
-      </div>
-    </div>
-  </ejs-appbar>
-  
+  <!-- End Brand + Menu -->
+  <div class="d-none   navbar-brandd fs-3 mx-auto" id=""> 
+   <span> Dashbord</span>
+  </div>
+  <!-- Menu Button  Toggler-->
+  <div  (click)="collapsenavbar()" id="naavbar-toggler" class="  " >
+    <div class="bar"   ></div>
+    <div class="bar"   ></div>
+    <div class="bar"   ></div>
 </div>
+<!--   <button class="navbar-toggler  "  type="button"  id="navbar-toggler" (click)="collapsenavbar()"
+   >
+    <i class=" bi bi-list " style=" color :#0c85ef; font-size: 2rem;"></i>
+  </button> -->
+  <!-- End Menu Button  Toggler-->
+  <!-- Nav Menu -->
+ 
+  <div class="navbaar-nav d-flex align-items-center " style="flex:1;"  id="btnn" >
+    <div class="header-left d-flex align-items-center " >
+      <!-- seach Input -->
+      <div class="search-wrapper " id="Nav-search">
+        <div class="input-holder">
+          <input type="text" class="search-input" placeholder="Type to search">
+          <button type='button' (click)="searchfor()" class=" btn search-icon ">
+            <span class="bi bi-search"></span>
+          </button>
+        </div>
+        <button class=" btn close bi bi-x-lg" (click)="search()">
+
+        </button>
+      </div>
+          <!-- End seach Input -->
+            <!-- Menu -->
+      <ejs-menu [items]='menuItems' cssClass="megaMenu d-none d-xl-block" ></ejs-menu>
+      <!-- End Menu -->
+    </div>
+      <!-- shorcuts Menu -->
+    <div class="header-right d-flex align-items-center  ms-auto ">
+
+      <div class=" butts d-flex justify-content-between px-2">
+        <div class="cc dropdown p-0" id="dropdownCalendar"
+          data-bs-toggle="dropdown" aria-expanded="false"
+          style=" font-size: 15px; background-color:rgba(0, 187, 255, 0.06);
+          color: rgb(0, 187, 255); ">
+          <i class="bi bi-calendar-date cc ms-2"></i>
+          <div class="dropdown-menu text-small shadow p-0"aria-labelledby="dropdownCalendar">
+          <div class="dropdownHeader ">
+            <div class="ee">
+              <p>GridCalendar</p>
+              <p>Easy grid navigation inside dropdowns</p>
+            </div>
+          </div>
+          <div class="dropdownContent">
+            <div class="flexCard"></div>
+            <div class="flexCard"></div>
+            <div class="flexCard"></div>
+            <div class="flexCard"></div>
+            <div class="flexCard"></div>
+            <div class="flexCard"></div>
+          </div>
+          <div class="footerdropDown d-flex justify-content-center flex-column
+            py-2">
+            <button class=" btn btn-primary mx-auto ">Follow-Ups</button>
+          </div>
+        </div>
+        </div>
+       
+        <div class="dropdown ">
+          <span class="cc " id="dropdownNotification" data-bs-toggle="dropdown"
+            aria-expanded="false"
+            style=" font-size: 15px; background-color:rgba(255, 0, 0, 0.06);
+            color: rgba(255, 0, 0); ">
+            <i class="bi bi-bell-fill cc notfRing ms-2"></i>
+            <span class="e-badge e-badge-info e-badge-notification
+              e-badge-overlap" style=" top: -5px !important;">14</span>
+          </span>
+          <div class="dropdown-menu text-small shadow p-0"
+            aria-labelledby="dropdownNotification">
+            <div class="dropdownHeader ">
+              <div class="ee">
+                <p>Grid Notification</p>
+                <p>Easy grid navigation inside dropdowns</p>
+              </div>
+            </div>
+
+            <div class="dropdownContent">
+              <div class="flexCard"></div>
+              <div class="flexCard"></div>
+              <div class="flexCard"></div>
+              <div class="flexCard"></div>
+              <div class="flexCard"></div>
+              <div class="flexCard"></div>
+            </div>
+            <div class="footerdropDown d-flex justify-content-center flex-column
+              py-2">
+              <button class=" btn btn-primary mx-auto ">Follow-Ups</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="dropdown p-0" style="padding: 0 !important;">
+          <span class=" cc " style=" font-size: 15px; background-color:rgba(232,
+            122, 201, 0.06) ;color: rgba(232, 122, 201);"
+            id="dropdownLanguage" data-bs-toggle="dropdown"
+            aria-expanded="false">
+
+            <img src="{{srcImg}}" style=" border-radius: 50%; width: 40px;
+              height: 40px; "/>
+
+          </span>
+          <div class="dropdown-menu text-small shadow p-0" aria-labelledby="dropdownLanguage">
+            <div class="dropdownHeader ">
+              <div class="ee">
+                <h5> Choose language</h5>
+              </div>
+            </div>
+
+            <div class="dropdownContent d-flex flex-column ">
+              <div class="cursor-pointer flexCard p-2 w-100 d-flex flex-gap-2
+                align-items-center "
+                (click)="srcImg='../../../assets/Flag_of_the_United_States.svg.webp'">
+                <img src="../../../assets/Flag_of_the_United_States.svg.webp"
+                  style=" width: 50px; height: 30px; margin-right: 20px;"/>
+                ENGLISH
+              </div>
+              <div class="cursor-pointer flexCard p-2 w-100 d-flex flex-gap-2
+                align-items-center" (click)="srcImg='../../../assets/city3.jpg'">
+                <img src="../../../assets/city3.jpg" style=" width: 50px;
+                  height: 30px; margin-right: 20px;"/>
+                Frensh
+              </div>
+              <div class="cursor-pointer flexCard p-2 w-100 d-flex flex-gap-2
+                align-items-center"
+                (click)="'srcImg=../../../assets/city3.jpg'">
+                <img src="../../../assets/city3.jpg" style=" width: 50px;
+                  height: 30px; margin-right: 20px;"/>
+                Deuvh
+              </div>
+              <div class="cursor-pointer flexCard p-2 w-100 d-flex flex-gap-2
+                align-items-center"
+                (click)="'srcImg=../../../assets/city3.jpg'">
+                <img src="../../../assets/city3.jpg" style=" width: 50px;
+                  height: 30px; margin-right: 20px;"/>
+                Arabic
+              </div>
+
+            </div>
+            <div class="footerdropDown d-flex justify-content-center flex-column
+              py-2">
+              <button class=" btn btn-primary mx-auto ">Follow-Ups</button>
+            </div>
+          </div>
+        </div>
+       
+      </div>
+
+
+
+
+
+
+
+      <div class="dropdown  d-flex"  >
+      <div class="imageSeting " data-bs-toggle="dropdown" id="dropdownSetting"
+      aria-expanded="false">
+        <img class="e-avatar e-avatar-small e-avatar-circle image" 
+          src="https://github.com/mdo.png">
+
+        <span class="bi bi-chevron-down ms-2" _ngcontent-rxn-c18=""></span>
+      </div>
+        <div class="d-flex flex-column mx-3  settingsName">
+          <span style="font-weight: 500;"> Alna MClourd</span>
+          <span style="color: #4a4a4ac1;"> VP People Manager
+          </span>
+      </div>
+        <div class="dropdown-menu text-small shadow p-0" aria-labelledby="dropdownSetting">
+          <div class="dropdownHeader ">
+            <div class="ee">
+              <p>Settings</p>
+              <p>Settings</p>
+            </div>
+          </div>
+
+          <div class="dropdownContent">
+            <div class="flexCard"></div>
+            <div class="flexCard"></div>
+            <div class="flexCard"></div>
+            <div class="flexCard"></div>
+            <div class="flexCard"></div>
+            <div class="flexCard"></div>
+          </div>
+          <div class="footerdropDown d-flex justify-content-center flex-column
+            py-2">
+            <button class=" btn btn-primary mx-auto ">Follow-Ups</button>
+          </div>
+        </div>
+      </div>
+    </div>
+     <!-- End shorcuts Menu -->
+    </div>
+  
+  <!-- End Nav Menu -->
+
+</div>
+</ejs-appbar>
+
+

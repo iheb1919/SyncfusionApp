@@ -11,7 +11,121 @@
   .e-treeview {
     font-size: 14px;
   }
-  .aa{
-    color: blue;
-  }
+ .e-card-content{
+  position: relative !important;
+  height: 90%;
   
+ }
+ .blurdiv{
+  z-index:5;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(109, 205, 253, 0.565);
+ }
+  .a{
+    z-index: 10;
+    position: absolute;
+    top: 10px;
+    width: 90%;
+    height: 80%;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+ }
+ .a * {
+  color: black;
+ }
+ .progressbar-label {
+  text-align: left;
+  font-family: Roboto-Regular;
+  font-size: 14px;
+  color: #3D3E3C !important;
+  letter-spacing: 0;
+  margin-top: -2%;
+  top: 30px;
+  margin-left: 10%;
+}
+
+
+.e-list-item{
+  height: inherit !important;
+  line-height: 20px !important;
+  background-color: transparent !important;
+  border-bottom:1px solid #00000043 !important;
+  margin: 0 10px;
+}
+
+
+.list-wrapper{
+  padding-left: 20px;
+  
+}
+.list-wrapper::before{
+  position: absolute;
+  left: 10px;
+  content: '';
+  display: block;
+  height: 90%;
+  width: 5px;
+  background-color:  rgba(255, 0, 0, 0.435);
+  border-radius: 5px;
+}
+.inner-list-wrapper{
+  width: 100%;
+}
+.logo_edit{
+  color:rgb(0, 170, 255) ;
+}
+.logo_delete{
+  color: red;
+}
+.logo_edit:hover{
+  border-radius: 5px;
+  background-color:rgb(0, 170, 255) ;
+  color: #fff;
+  transition: all linear .2s;
+
+}
+.logo_delete:hover{
+  border-radius: 5px;
+  background-color: red;
+  color: #fff;
+  transition: all linear  .2s;
+}
+
+#list-logo{
+  display: none;
+}
+.e-hover #list-logo{
+  display: block ;
+}
+#listview_template{
+  overflow: hidden;
+}
+#listview_template:hover{
+  overflow-y: scroll;
+}
+::-webkit-scrollbar{
+  width: 5px;
+}
+::-webkit-scrollbar-track{
+  background-color: transparent;
+  margin-block: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: rgba(0, 98, 255);
+  border-radius: 15px;
+  height: 10px !important;
+}
+
+
+
+
+

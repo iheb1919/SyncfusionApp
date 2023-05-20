@@ -1,18 +1,40 @@
-<div class="d-flex flex-column" style="position: relative">
-    <app-navbar
+
+<app-navbar class="shadow"
         (isCheckedChange)="isCheckedChange($event)"
-        style="position: sticky; top: 0; z-index: 999999"
+       
         [sideClosed]="sideClosed"
         [trye]="trye">
     </app-navbar>
-    <div class="main-sidebar-content d-flex">
+    <div class="main-sidebar" style="min-height: 100vh; position: relative;" >
+        <div class="divtest" style="position: absolute; height: 20vh;  width: 100%; 
+                background: #02c6f2;" >
+                <ul class="d-flex gap-3" style="margin-left: 280px;">
+                    <li *ngFor="let url of routeUrl" class="test" style="margin-top: 20px;">
+                        <a [routerLink]="[goto]"></a>
+                        {{url}}
+                    </li>
+
+                </ul>
+        </div>
          <app-side-bar
-         style="position: fixed; top: 0; left: 0;"
-            [sideClosed]="sideClosed"
+            style="height: 100%;"
+           
             (calltry)="try($event)">
         </app-side-bar> 
-        <div class="container-fluid" id="zz" style=" transition: margin-left .5s linear; margin-left: 290px; padding: 20px;  margin-right: 15px; " >
-            <app-home ></app-home>
+    
+        <div  id="zz" 
+            style=" 
+            transition: margin-left .5s linear; 
+             margin-left: 280px; ">
+             
+            <div class="innermain" style=" border: 1px solid red; margin:60px 0px 20px 0px "  >
+               
+               <!--  <app-home></app-home> -->
+               <router-outlet (activate)="scrollTop()"></router-outlet>
+
+            </div>
+              
         </div>
-    </div>
 </div>
+
+

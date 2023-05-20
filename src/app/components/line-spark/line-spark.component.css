@@ -1,0 +1,36 @@
+td {
+    font-family: "Roboto", "Segoe UI", "GeezaPro", "DejaVu Serif", "sans-serif";
+    font-weight: 600;
+}
+
+.spark {
+    border: 1px solid rgb(209, 209, 209);
+    border-radius: 2px;
+    width: 100%;
+}
+
+.sparent {
+    height: 110px;
+    margin-left: 3%;
+    margin-right: 0%;
+}
+
+.sparkpie {
+    float: left;
+    margin-top: 15px;
+    margin-left: 2%;
+}
+
+.pieparent {
+    width: 93%;
+}
+
+.pietext {
+    float: left;
+
+}
+
+.sparktext {
+    text-anchor: middle;
+    width: 100%;
+}

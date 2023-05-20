@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { TreeView, TreeViewComponent } from '@syncfusion/ej2-angular-navigations';
+import { AnimationModel } from '@syncfusion/ej2-angular-progressbar';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,49 @@ import { TreeView, TreeViewComponent } from '@syncfusion/ej2-angular-navigations
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent  {
-  
+
+  public animation: AnimationModel = { enable: true, duration: 2000, delay: 0 };
+  public value: number = 40;
+  labelStyle = {color:'#fff'}
+  @ViewChild('listviewInstance') ListView : any
+
+data2=[{id:1,desc:"qzdqsdqsd",title:"eeee"},
+        {id:2,desc:"qzdqsdqsd",title:"eeee"},
+        {id:3,desc:"qzdqsdqsd",title:"eeee"},
+        {id:4,desc:"qzdqsdqsd",title:"eeee"},
+        {id:5,desc:"qzdqsdqsd",title:"eeee"},
+        {id:6,desc:"qzdqsdqsd",title:"eeee"},
+        {id:7,desc:"qzdqsdqsd",title:"eeee"},
+        {id:8,desc:"qzdqsdqsd",title:"eeee"},
+      
+      ]
+
+
+  showall(){
+    
+    console.log(this.ListView.getSelectedItems())
+  }
     // create an instance of the TreeView
- 
+     primaryXAxis : object = {
+           
+      valueType: 'Category',
+      majorTickLines:{width: 1,},
+      majorGridLines:{width: 1,},
+      lineStyle: { width: 1,  },
+      label:'none'
+  };
+
+    primaryYAxis : object = {
+      
+      majorGridLines:{width: 1,},
+      majorTickLines:{width: 1,},
+      lineStyle: { width: 1,  },
+      labelStyle: {
+          
+          border:"1px solid red"
+          
+         }
+  };
 cssClass="headerTitle"
 treeviewData = [
   { id: '0', text: "Node 5",title:"hime",cssClass:"headerTitle",type:"title"},

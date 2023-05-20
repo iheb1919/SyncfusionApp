@@ -1,33 +1,112 @@
+
+.navbar-brandd,.navbar-brand{
+font-family: 'Pacifico';
+}
+.e-appbar{
+    box-shadow: 0 0.46875rem 2.1875rem rgba(4,9,20,.03),
+     0 0.9375rem 1.40625rem rgba(4,9,20,.03), 
+     0 0.25rem 0.53125rem rgba(4,9,20,.05), 
+     0 0.125rem 0.1875rem rgba(4,9,20,.03) !important;
+}
+/*  Navbar Responsive */
+
+@media (max-width: 991.98px){
+.dropdown-menu{
+    min-width: unset !important;
+    position: fixed !important;
+    top: 350px !important;
+    width: 90% !important;
+    right: unset !important;
+    height: max-content;
+    background-color: #fff !important;
+    transform: translateY(-50%)!important;
+}
+.navbaar-nav {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    left: 5%;
+    width: 90% !important;
+    top: 0;
+    transition: all .2s;
+    background: #fff;
+    border-radius: 50px;
+    padding: 0 10px;
+    overflow: hidden;
+    box-shadow: 0 0.46875rem 2.1875rem rgba(4,9,20,.03), 0 0.9375rem 1.40625rem rgba(4,9,20,.03), 0 0.25rem 0.53125rem rgba(4,9,20,.05), 0 0.125rem 0.1875rem rgba(4,9,20,.03);
+
+}
+
+.settingsName{
+    display: none !important;
+}
+#naavbar-toggler{
+    display: block !important;
+}
+#logo{
+    width: 60px !important;
+    padding: 0 !important;
+}
+.navbar-brandd{
+    display: block !important;
+}
+.megaMenu{
+    display: none;
+}
+.navbaar-nav.mobile-show {
+    z-index: 9999999999999;
+    visibility: visible;
+    opacity: 1;
+    top: 100px;
+    height: 70px;
+}
+}
+
+
 .custom-appbar{
-   height:70px;
+    z-index: 10001;
+   height:60px;
     padding: auto;
-    display: flex;
-    align-items: center;
+   overflow: visible;
     
 }
-.logoheader{
-    max-width: 200px !important;
-    transition: all .5s ease;
+@media (min-width: 992px) {
+   /*  #dropdownSetting ~ .dropdown-menu[data-bs-popper]{
+        right: 70% !important;
+    } */
 
+.logobrandClose{
+    width: 60px !important;
+    transition: all .5s ease;
+    padding: 5px !important;
+    margin-right: 25px !important;
+    transition: all .5s ease;
 }
+
  .logo{   
     max-width: 200px !important;
-
+    transition: all .5s ease;
     overflow: hidden !important;
     white-space: nowrap;
-
-
 }
-.logoheader .logo{
+.logobrandClose .logo{
     max-width: 0 !important;
+    overflow: hidden;
     transition: all .5s ease;
 }
+}
+
+
+
+/* End Navbar Responsive */
 .control-container{
 
      box-shadow: 0 0.46875rem 2.1875rem rgba(4,9,20,.03), 0 0.9375rem 1.40625rem rgba(4,9,20,.03), 0 0.25rem 0.53125rem rgba(4,9,20,.05), 0 0.125rem 0.1875rem rgba(4,9,20,.03);
     
 }
-
+.flexCard{
+    cursor: pointer;
+}
 
 /* Ejs-Menu*/
 .e-menu-wrapper {
@@ -43,13 +122,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 44px;
-    height: 44px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
+
     
 }
+.cc i{
+    font-size: 1.1rem !important;
+}
 
-
+.search-wrapper.active +.megaMenu ul {
+    opacity: 0;
+}
 @keyframes mymove {
    
     /* 50% {font-size: 13px;}
@@ -61,24 +146,23 @@
         transform: rotate(-15deg);
       }
   }
-.notfRing{
+.notfRing::before{
     
     animation: mymove 1.5s infinite  ;
 }
-
-.dropdown-Menu{
+.dropdown-menu[data-bs-popper]{
     color: #000;
-    display: none;
     overflow: hidden;
     position:absolute;
-    top: 100%;
-    right: 0;
+    top: 130%;
+    right: 10px !important;
+    left: unset !important;
     min-width: 400px;
     max-height: 600px;
     background-color: #faf8f87c;
     border-radius: 5px ;
-    box-shadow: 0 0.46875rem 2.1875rem rgba(4,9,20,.03), 0 0.9375rem 1.40625rem rgba(4,9,20,.03), 0 0.25rem 0.53125rem rgba(4,9,20,.05), 0 0.125rem 0.1875rem rgba(4,9,20,.03);
 }
+
 .show .dropdown-Menu{
     display: block;
 }
@@ -140,7 +224,7 @@
 .search-wrapper .input-holder {
     height: 42px;
     width: 42px;
-    overflow: hidden;
+    /* overflow: hidden; */
     position: relative;
     transition: all .3s ease-in-out;
     border-radius:50px;
@@ -192,8 +276,9 @@
 }
 
 .search-wrapper .input-holder .search-icon span {
-    width: 22px;
-    height: 22px;
+    font-size: 1.3rem;
+   
+    color: #0080ff;
     display: inline-block;
     vertical-align: middle;
     position: relative;
@@ -219,7 +304,7 @@
 .search-wrapper.active .input-holder .search-icon {
     width: 42px;
     height: 42px;
-    margin: 0;
+    
     border-radius: 30px
 }
 
@@ -265,22 +350,64 @@ button.close {
     color: #000;
     opacity: .5;
 }
+/* SEARCH INPUT  ENDS */
 .imageSeting{
     cursor: pointer;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
-    margin-right: 30px;
+   
     padding-left: 10px;
     border-left: 1px solid rgb(111, 111, 111);
-    max-width: 500px;
+ 
 }
 .imageSeting > img {
     margin-right: 10px;
     margin-left: 10px;
+    height: 40px;
+    width: 40px;
 }
-/* SEARCH INPUT  ENDS */
 
+/* Menu Ejs*/
 
+.e-menu-item{
+    margin: 0 20px;
+    font-size: .9rem;
+}
+/* End Menu Ejs */
+.bar:first-child{
+    margin-top: 6px;
+}
+.bar{
+    width: 23px;
+    height: 2px;
+    margin-bottom: 6px;
+    border-radius: 10px;
+    transition: .4s;
+    background-color: rgb(19, 133, 247);
+}
+
+#naavbar-toggler{
+    display: none ;
+    height: min-content;
+    margin: 0 25px;
+    cursor: pointer;
+}
+#navbaar-nav.barClose{
+    margin-top: 35px;
+}
+.barClose .bar:nth-child(1){
+    position: absolute;
+    transform: rotate(45deg) ;
+    margin-top: 0px !important;
+
+}
+.barClose .bar:nth-child(3){
+
+    transform: rotate(-45deg) ;
+}
+.barClose .bar:nth-child(2){
+    display: none;
+}
 
 

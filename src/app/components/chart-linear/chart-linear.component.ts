@@ -1,22 +1,54 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit,Input, ViewChild } from '@angular/core';
+import { Chart } from '@syncfusion/ej2-angular-charts';
 @Component({
   selector: 'app-chart-linear',
   templateUrl: './chart-linear.component.html',
   styleUrls: ['./chart-linear.component.css']
 })
-export class ChartLinearComponent  {
+export class ChartLinearComponent     {
   
-    public primaryXAxis: Object;
+    @Input() type='Line'
+    @Input() height : string = "100%";
+    @Input() primaryXAxis : object = {
+           
+        valueType: 'Category',
+        majorTickLines:{width: 0,},
+        majorGridLines:{width: 0,},
+        lineStyle: { width: 0,  },
+        label:'none'
+    };
+
+    @Input() primaryYAxis : object = {
+        
+        majorGridLines:{width: 0,},
+        majorTickLines:{width: 0,},
+        lineStyle: { width: 0,  },
+        labelStyle: {
+            
+            border:"1px solid red"
+            
+           }
+    };
     public chartData: Object[];
     public chartData2: Object[];
-    public primaryYAxis: Object;
     public legendSettings: Object;
     public tooltip: Object;
     public title: string;
     public marker: Object;
+    public border:Object;
+    public palette : string []
+    public chartArea: Object = {
+        border: {
+          width: 0
+        }
+      };
+      
     constructor() {
+        
+        
         // Tooltip for chart
+        this.palette = ["rgba(109, 205, 253, 0.565)", "#F6B53F", "#6FAAB0", "#C4C24A"];
+        this.border = { width: 2, color: 'blue'};
         this.tooltip = {
             enable: true
         }
@@ -36,22 +68,20 @@ export class ChartLinearComponent  {
             { month: 'Sep', sales: 38 }, { month: 'Oct', sales: 30 },
             { month: 'Nov', sales: 25 }, { month: 'Dec', sales: 32 }
         ];
-        this.primaryXAxis = {
-          title:'month',
-            valueType: 'Category'
-        };
-        this.primaryYAxis = {
-          title:'sales',
-            labelFormat: '${value}K'
-        };
+        
+
         this.marker = {
             dataLabel:{
-                visible: true
+                visible: false
             }
         };
         this.legendSettings = {
-            visible: true
+            visible: false
         };
         this.title = 'Sales Analysis';
     }
+
+    /* height = '450px' */
+
+    
 }

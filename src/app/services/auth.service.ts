@@ -7,27 +7,20 @@ import { Menu, MenuItemModel } from '@syncfusion/ej2-navigations';
 import { enableRipple } from '@syncfusion/ej2-base';
 import { Subject } from 'rxjs';
 
-@Injectable({
-  providedIn:'root'
- 
-})
-export class ServicesService {
-/* private btnInstance : SidebarComponent;
-triggerSide(){
-  this.btnInstance.toggle()
+@Injectable()
+export class AuthServices {
+  loggedin:boolean=false
+  logIn(){
+    this.loggedin=true
+    console.log("login"+" "+this.loggedin)
+    
+  }
+logOut(){
+  this.loggedin=false
 }
-triggerNav(){
-  this.btnInstance.toggle()
-} */
-private subject = new Subject<any>();
-
-  sendMessage(message: any) {
-    console.log(message)
-    this.subject.next(message);
-  }
-
-  getMessage() {
-    return this.subject.asObservable();
-  }
+isAuthenticated(){
+  return this.loggedin
+}
   constructor() { }
+
 }

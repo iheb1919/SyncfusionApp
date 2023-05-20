@@ -3,7 +3,6 @@ import { IsubNav } from 'src/app/helpers/subInterface';
 import {  ViewEncapsulation, Inject } from '@angular/core';
 import { SidebarComponent, ClickEventArgs,TreeViewComponent  } from '@syncfusion/ej2-angular-navigations';
 import { Menu, MenuItemModel } from '@syncfusion/ej2-navigations';
-import { ServicesService } from 'src/app/services/services.service';
 
 @Component({
   selector: 'app-side-bar',
@@ -17,7 +16,7 @@ export class SideBarComponent implements OnInit  {
     }
     @ViewChild('sidebarTreeviewInstance') sidebarTreeviewInstance: SidebarComponent;
     @Output() calltry:EventEmitter<any> = new EventEmitter<any>
-    @Input() sideClosed :Boolean ;
+     sideClosed :Boolean = false ;
     groupByTitle(data:any) {
         let result:any = [];
         let groups:any = {};
@@ -52,24 +51,16 @@ export class SideBarComponent implements OnInit  {
           nodeId: '00', nodeText: 'MenuHome', type: 'title' , title:'MenuHome'
       },
         {   
-            nodeId: '01',hasChildren: true, title:'MenuHome', nodeText: 'Installation', iconCss: 'icon-microchip icon',
+            nodeId: '01',hasChildren: true, title:'MenuHome', nodeText: 'Users', iconCss: 'icon-microchip icon',
             nodeChild:[
-                { nodeId: '01-01',hasChildren: false, nodeText: 'Level1', iconCss: 'icon-thumbs-up-alt icon',
-                    nodeChild:[
-                        { nodeId: '01-01-01',hasChildren: true, nodeText: 'Level3', iconCss: 'icon-thumbs-up-alt icon',
-                        nodeChild:[
-                            { nodeId: '01-01-01-01',hasChildren: true, nodeText: 'Level4', iconCss: 'icon-thumbs-up-alt icon',
-                            nodeChild:[
-                                { nodeId: '01-01-01-01', nodeText: 'Deployment', iconCss: 'icon-thumbs-up-alt icon',},
-                                { nodeId: '01-01-01-02', nodeText: 'Deployment', iconCss: 'icon-thumbs-up-alt icon',}
-                            ]},
-                            { nodeId: '01-01-01-02', nodeText: 'Depzerloyment', iconCss: 'icon-thumbs-up-alt icon',}
-                        ]},
-                        { nodeId: '01-01-02', nodeText: 'Deployment', iconCss: 'icon-thumbs-up-alt icon',}
-                    ]
-                },
-                { nodeId: '01-02',hasChildren: false, nodeText: 'Deployment', iconCss: 'icon-thumbs-up-alt icon',},
-                { nodeId: '01-03',hasChildren: false, nodeText: 'Deployment', iconCss: 'icon-thumbs-up-alt icon',}
+                
+                { nodeId: '01-02',hasChildren: false, nodeText: 'Admins', iconCss: 'icon-thumbs-up-alt icon',
+                nodeChild:[
+                
+                    { nodeId: '01-02',hasChildren: false, nodeText: 'Admins', iconCss: 'icon-thumbs-up-alt icon',url:'/login'},
+                    { nodeId: '01-03',hasChildren: false, nodeText: 'Users', iconCss: 'icon-thumbs-up-alt icon',url:'/login'}
+                ]},
+                { nodeId: '01-03',hasChildren: false, nodeText: 'Users', iconCss: 'icon-thumbs-up-alt icon',url:'/login'}
             ]
         },
         {
@@ -125,9 +116,9 @@ export class SideBarComponent implements OnInit  {
         this.calltry.emit(this.sidebarTreeviewInstance)
     }
     
-    public width: string = '290px';
-    public target: string = '.main-sidebar-content';
-	public mediaQuery: string = '(min-width: 600px)';
+    public width: string = '280px';
+    public target: string = '.main-sidebar';
+	public mediaQuery: string = '(min-width: 992px)';
     public dockSize: string = '80px';
    
     public fields: object = { 
@@ -139,25 +130,24 @@ export class SideBarComponent implements OnInit  {
         iconCss: "iconCss" };
     @HostListener('mouseenter', ['$event']) 
     onMouseEnter( ) {
-        const li_lvl1  = Array.from(document.querySelectorAll<HTMLElement>('.e-list-item.e-level-1.e-has-child'))
-        if( this.sideClosed && li_lvl1) {
-            console.log(li_lvl1)
+        const li_lvl1  = Array.from(document.querySelectorAll<HTMLElement>('.e-list-item.e-has-child'))
+        if( !this.sidebarTreeviewInstance.isOpen && li_lvl1) {
+            console.log('onMouseIn'+ this.sidebarTreeviewInstance.isOpen)
             li_lvl1.map((e:any)=>{ 
                const  ul=e.querySelector('ul')
                if(!e.classList.contains('e-node-collapsed'))ul.style.display="block"
             })
             this.sidebarTreeviewInstance.toggle();
+            this.sideClosed = true
         }  
     }
      @HostListener('mouseleave', ['$event']) 
     onMouseLeave() {
-       
-
-        if( this.sideClosed) {
-            console.log('onMouseOut')
+        if( this.sidebarTreeviewInstance.isOpen && this.sideClosed) {
+            console.log('onMouseOut'+ + this.sidebarTreeviewInstance.isOpen)
             Array.from(document.querySelectorAll<HTMLElement>('li ul')).forEach(ul => ul.style.display = 'none');           
             this.sidebarTreeviewInstance.toggle();
-            console.log(this.sideClosed)
+            this.sideClosed = false
         }
     } 
     

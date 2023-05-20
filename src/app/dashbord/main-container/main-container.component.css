@@ -1,4 +1,36 @@
+@media (max-width:992px) {
+        #zz{
+            margin-left: 0px !important;
+        }
+        .divtest{
+            margin-left: 0 !important;
+        }
+        .divtest ul {
+            margin-left: 10px !important;
+           
+        
+        }
+
+}
+
 .zz{
     margin-left: 80px !important;
-    transition: all .5s linear;
+}
+.test{
+    color: blue;
+    position: relative;
+}
+.test::before{
+    position: absolute;
+    right: -15px;
+    content: '>';
+    display: block;
+}
+ .test:last-child::before{
+        display: none;
+    } 
+.divtest ul {
+    
+    list-style: none;
+
 }
